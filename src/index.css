@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  --ds-bg: #0b1011;
+  --ds-panel: #11191a;
+  --ds-panel-alt: #141c1d;
+  --ds-panel-hover: #1a2526;
+
+  --ds-line: #334042;
+  --ds-line-soft: #263234;
+
+  --ds-text: #edf1ed;
+  --ds-muted: #9cabad;
+
+  --ds-gold: #e7b25c;
+  --ds-cyan: #87c9c6;
+  --ds-purple: #a78bfa;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ds-bg);
+  color: var(--ds-text);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(12.5% - 1px),
+      rgb(182 209 204 / 2%) 12.5%
+    ),
+    radial-gradient(
+      ellipse at 10% 0,
+      rgb(81 117 121 / 13%),
+      transparent 55%
+    );
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--ds-gold);
+  color: var(--ds-bg);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ds-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ds-line);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #526365;
+}
